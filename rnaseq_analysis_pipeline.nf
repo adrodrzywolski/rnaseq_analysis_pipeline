@@ -262,12 +262,7 @@ process bam_qual {
     file "${bam.simpleName}_stats/*" into bam_qual_result
     script:
     """
-<<<<<<< HEAD:rnaseq_analysis_pipeline.nf
-    max_mem=\$(awk '/MemAvailable/{ram = \$2/1048576*0.6; printf "%.1fG",ram}' /proc/meminfo)
-    qualimap --java-mem-size \$max_mem rnaseq -outdir ${bam.simpleName}_stats --bam ${bam} -pe -s -gtf ${annotation_path}
-=======
-    qualimap --java-mem-size=8G rnaseq -outdir ${bam.simpleName}_stats --bam ${bam} -pe -s -gtf ${annotation_path}
->>>>>>> 733d4ea... names2:rnaseq_pipeline_analysis.nf
+    qualimap --java-mem-size=8G -outdir ${bam.simpleName}_stats --bam ${bam} -pe -s -gtf ${annotation_path}
     """
 }
 
