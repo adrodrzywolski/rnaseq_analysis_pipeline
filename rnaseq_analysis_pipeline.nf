@@ -262,7 +262,7 @@ process bam_qual {
     file "${bam.simpleName}_stats/*" into bam_qual_result
     script:
     """
-    qualimap --java-mem-size=8G -outdir ${bam.simpleName}_stats --bam ${bam} -pe -s -gtf ${annotation_path}
+    qualimap --java-mem-size=8G rnaseq -outdir ${bam.simpleName}_stats --bam ${bam} -pe -s -gtf ${annotation_path}
     """
 }
 
