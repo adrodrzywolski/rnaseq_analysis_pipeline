@@ -281,12 +281,10 @@ process make_report {
 
     output:
     file "*multiqc_report.html" into multiqc_report
-    file "*_data"
-
 
     script:
     """
-    multiqc -f -c /bio-tools/config.yaml .
+    multiqc -f -n ${bam.simpleName}_multiqc_report.html --no-data-dir -c /bio-tools/config.yaml .
     """
 }
 
