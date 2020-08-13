@@ -176,11 +176,11 @@ process hisat2{
 
     hisat2 \\
     -p ${task.cpus} \\
-    --summary-file ${sampleId}_Hisat_summary.txt \\
+    --summary-file \${reads_1_simple_name}_Hisat_summary.txt \\
     -x ${reference[0].simpleName} \\
     -1 \${reads_1} \\
     -2 \${reads_2} \\
-    | samtools view -hbS > ${sampleId}.bam """
+    | samtools view -hbS > \${reads_1_simple_name}.bam """
 }
 
 // Fixing mate with samtools
