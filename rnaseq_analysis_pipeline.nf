@@ -180,7 +180,7 @@ process hisat2{
     -x ${reference[0].simpleName} \\
     -1 \${reads_1} \\
     -2 \${reads_2} \\
-    | samtools view -hbS > \${reads_1_simple_name}.bam """
+    | samtools view -F 4 -hbS > \${reads_1_simple_name}.bam """
 }
 
 // Fixing mate with samtools
@@ -246,7 +246,7 @@ process feature_count {
     """
     featureCounts -p -B -T ${task.cpus} -t exon \\
     -a ${annotation_path} \\
-    -o ${bam.simpleName} \\
+    -o ${bam.simpleName}.count.txt \\
     ${bam}
     """
 }
