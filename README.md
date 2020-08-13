@@ -43,7 +43,6 @@ Required arguments:
 --reads - path to single- or paired-end reads in form of regular exporession. File can be gziped
 --genome - path to reference genome file
 --annotation - path to annotation file
---se - if data are single end [default: false]
 
 Optional arguments:
 --output - select directory path where all output needs to be stored [default: .]
