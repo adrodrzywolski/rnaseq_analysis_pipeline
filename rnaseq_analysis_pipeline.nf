@@ -240,7 +240,8 @@ process feature_count {
     file bam_index from indexof_fixed_sorted_bam
 
     output:
-    file '*.summary' into feature_count_result
+    file '*.summary' into feature_count_result_summary
+    file '*.txt' into feature_count_result
 
     script:
     """
@@ -277,7 +278,8 @@ process make_report {
     file hisat2 from hisat2_summary
     file raw_fastqc from result_raw_fastqc
     file trimmed_fastqc from result_trimmed_fastqc
-    file feature_count from feature_count_result
+    file feature_count from feature_count_result_summary
+    file count from feature_count_result
 
     output:
     file "*multiqc_report.html" into multiqc_report
