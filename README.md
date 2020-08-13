@@ -35,7 +35,7 @@ curl -fsSL https://get.nextflow.io | bash
 
 Basic usage
 ```bash
-./nextflow run rnaseq_analysis_pipeline.nf --reads "path/to/samples/*_[1,2].fastq*" --genome "Homo_sapiens/Ensembl/GRCh37/Sequence/Chromosomes/1.fa" -with-docker "adrodrzywolski/basic_rnaseq_prep:0.1" --annotation "Homo_sapiens/Ensembl/GRCh37/Annotation/Genes/genes.gtf" --output "output"
+./nextflow run rnaseq_analysis_pipeline.nf --reads "path/to/sample/SRR1039509*_[1,2].fastq*" --genome "Homo_sapiens/Ensembl/GRCh37/Sequence/Chromosomes/1.fa" -with-docker "adrodrzywolski/basic_rnaseq_prep:0.1" --annotation "Homo_sapiens/Ensembl/GRCh37/Annotation/Genes/genes.gtf" --output "output"
 ```
 
 ```
