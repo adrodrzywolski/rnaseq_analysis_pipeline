@@ -49,5 +49,15 @@ Optional arguments:
 --output - select directory path where all output needs to be stored [default: .]
 ```
 
+## Output
+
+After run, you'll get files prefixed with fastq file names:
+* raw reads fastqc raport (zip,html)
+* trimmed reads fastqc raport (zip,html)
+* Hisat2 summary (txt)
+* qualimap report (whole directory)
+* **feature counts (summary)**
+* **multiqc report (html)**
+
 ## License
 The rnaseq pipeline analysis is released under the MIT license.
